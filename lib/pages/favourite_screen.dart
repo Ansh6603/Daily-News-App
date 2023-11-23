@@ -17,6 +17,20 @@ class FavoriteScreen extends StatelessWidget {
       body: Obx(
         () {
           final favorites = favoriteController.favorites;
+
+          if (favorites.isEmpty) {
+            return const Center(
+              child: Text(
+                "No favorites added yet !!",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
+              ),
+            );
+          }
+
           return ListView.builder(
             itemCount: favorites.length,
             itemBuilder: (context, index) {

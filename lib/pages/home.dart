@@ -12,6 +12,7 @@ import 'package:news_app_with_firebase/pages/all_news.dart';
 import 'package:news_app_with_firebase/pages/article_view.dart';
 import 'package:news_app_with_firebase/pages/category_news.dart';
 import 'package:news_app_with_firebase/pages/favourite_screen.dart';
+import 'package:news_app_with_firebase/auth/sign_up_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Home extends StatefulWidget {
@@ -63,7 +64,7 @@ class _HomeState extends State<Home> {
           title: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Daily "),
+              Text("            Daily "),
               Text(
                 "News",
                 style: TextStyle(
@@ -75,7 +76,19 @@ class _HomeState extends State<Home> {
           ),
           centerTitle: true,
           elevation: 0.0,
+          automaticallyImplyLeading: false,
           actions: [
+            IconButton(
+              icon: const Icon(Icons.exit_to_app),
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignUp(),
+                  ),
+                );
+              },
+            ),
             IconButton(
               icon: const Icon(Icons.favorite),
               onPressed: () {

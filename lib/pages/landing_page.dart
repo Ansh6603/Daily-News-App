@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_with_firebase/pages/home.dart';
+import 'package:news_app_with_firebase/auth/sign_up_page.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -55,7 +55,7 @@ class _LandingPageState extends State<LandingPage> {
             GestureDetector(
               onTap: () {
                 Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => const Home()));
+                    MaterialPageRoute(builder: (context) => const SignUp()));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width / 1.2,
